@@ -41278,9 +41278,9 @@ return def + &apos;&apos; === &quot;foo,bar&quot;;
 // ArraySetLength -&gt; [[Delete]]
 var del = [];
 var p = new Proxy([0,0,0,0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
-p.length = 1;
+//p.length = 1;
 return del + &apos;&apos; === &quot;5,4,3,2,1&quot;;
-      ">test(function(){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("549");try{return Function("asyncTestPassed","\n// ArraySetLength -> [[Delete]]\nvar del = [];\nvar p = new Proxy([0,0,0,0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});\np.length = 1;\nreturn del + '' === \"5,4,3,2,1\";\n      ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("549");return Function("asyncTestPassed","'use strict';"+"\n// ArraySetLength -> [[Delete]]\nvar del = [];\nvar p = new Proxy([0,0,0,0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});\np.length = 1;\nreturn del + '' === \"5,4,3,2,1\";\n      ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
+      ">test(function(){try{var asyncTestPassed=global.__asyncPassedFn && __asyncPassedFn("549");try{return Function("asyncTestPassed","\n// ArraySetLength -> [[Delete]]\nvar del = [];\nvar p = new Proxy([0,0,0,0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});\n//p.length = 1;\nreturn del + '' === \"5,4,3,2,1\";\n      ")(asyncTestPassed)}catch(e){asyncTestPassed=global.__strictAsyncPassedFn && __strictAsyncPassedFn("549");return Function("asyncTestPassed","'use strict';"+"\n// ArraySetLength -> [[Delete]]\nvar del = [];\nvar p = new Proxy([0,0,0,0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});\n//p.length = 1;\nreturn del + '' === \"5,4,3,2,1\";\n      ")(asyncTestPassed)&&"Strict"}}catch(e){return false;}}());
 </script></td>
 <td class="no" data-browser="tr">No</td>
 <td class="no" data-browser="babel">No</td>

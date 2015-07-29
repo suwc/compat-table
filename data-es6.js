@@ -5915,7 +5915,7 @@ exports.tests = [
         // ArraySetLength -> [[Delete]]
         var del = [];
         var p = new Proxy([0,0,0,0,0,0], { deleteProperty: function(o, v) { del.push(v); return delete o[v]; }});
-        p.length = 1;
+        //p.length = 1;
         return del + '' === "5,4,3,2,1";
       */},
       res: {},
